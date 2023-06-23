@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
     height, width = images[0].shape
     diffs = []
-    for i in range(len(images)-1):
+    for i in range(len(images)):
         if i == len(images)-1:
             diff = cv2.compare(images[i], images[0], cv2.CMP_NE)
             diffs.append(diff)
@@ -93,7 +93,7 @@ if __name__ == '__main__':
             for y in range(height):
                 for i, diff in enumerate(diffs):
                     if diff[y, x] == 255:
-                        writer.writerow([i+2,x, height-1-y])
+                        writer.writerow([i+1,x, height-1-y])
 
 
 
